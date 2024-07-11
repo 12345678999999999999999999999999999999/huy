@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tr{
+            color: green;
+        }
+        .fl{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="validation">Почтанды жаз</p>
+    <input type="text"  id="email" oninput="validationEmail(event)">
+    
+    <script>
+     function validationEmail(event){
+        // console.log(event.target.value)
+        let p = document.getElementById("validation")
+        let value = event.target.value
+        const re =
+       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+       re.test(value) 
+       ? p.innerHTML = "<span class='tr'>Почтанды туура жаздын, азаматсын</span>"
+       :p.innerHTML = "<span class='fl'>Почтанды туура жаз, аракет кыл</span>"
+     }
+    </script>
+</body>
+</html>
